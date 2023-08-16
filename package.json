@@ -4,8 +4,8 @@
   "description": "Chart.js plugin to draw and sync vertical crosshair lines",
   "version": "2.0.1",
   "license": "MIT",
-  "main": "dist/chartjs-plugin-crosshair.js",
-  "module": "dist/chartjs-plugin-crosshair.esm.js",
+  "main": "dist/@adelamar/chartjs-plugin-crosshair.js",
+  "module": "dist/@adelamar/chartjs-plugin-crosshair.esm.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/adelamarAtGalileo/chartjs-plugin-crosshair.git"
