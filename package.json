@@ -16,7 +16,7 @@
     "crosshair"
   ],
   "files": [
-    "dist/*.js"
+    "dist/@adelamar/*.js"
   ],
   "scripts": {
     "build": "gulp build && gulp package"
