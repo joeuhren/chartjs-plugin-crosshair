@@ -1,10 +1,23 @@
+Forked from [@adelamarAtGalileo/chartjs-plugin-crosshair](https://github.com/adelamarAtGalileo/chartjs-plugin-crosshair), who fixed chart syncing.
+
+This forked version also includes a fix allowing syncing across charts of variable height.  
+The fix can be utilized by adding the following to your plugins config:
+
+```
+plugins: {
+  crosshair: {
+    sync: {
+      axis: 'x', // Sync tooltips across charts of variable heights. Possible options: 'x' | 'xy'. Default: 'xy'
+    }
+  }
+}
+```
 
 <div align="center">
     <centering>
     <img src="header.png" width='600px'/>
     </centering>
 </div>
-
 
 [Chart.js](http://www.chartjs.org/) plugin to draw vertical crosshair, zoom, interpolate values and sync chart interactions.
 
@@ -25,36 +38,40 @@ new Chart(ctx, {
     // ... other options ...
     plugins: {
       tooltip: {
-        mode: 'interpolate',
-        intersect: false
+        mode: "interpolate",
+        intersect: false,
       },
       crosshair: {
         line: {
-          color: '#F66',  // crosshair line color
-          width: 1        // crosshair line width
+          color: "#F66", // crosshair line color
+          width: 1, // crosshair line width
         },
         sync: {
-          enabled: true,            // enable trace line syncing with other charts
-          group: 1,                 // chart group
-          suppressTooltips: false   // suppress tooltips when showing a synced tracer
+          enabled: true, // enable trace line syncing with other charts
+          group: 1, // chart group
+          suppressTooltips: false, // suppress tooltips when showing a synced tracer
         },
         zoom: {
-          enabled: true,                                      // enable zooming
-          zoomboxBackgroundColor: 'rgba(66,133,244,0.2)',     // background color of zoom box 
-          zoomboxBorderColor: '#48F',                         // border color of zoom box
-          zoomButtonText: 'Reset Zoom',                       // reset zoom button text
-          zoomButtonClass: 'reset-zoom',                      // reset zoom button class
+          enabled: true, // enable zooming
+          zoomboxBackgroundColor: "rgba(66,133,244,0.2)", // background color of zoom box
+          zoomboxBorderColor: "#48F", // border color of zoom box
+          zoomButtonText: "Reset Zoom", // reset zoom button text
+          zoomButtonClass: "reset-zoom", // reset zoom button class
         },
         callbacks: {
-          beforeZoom: () => function(start, end) {                  // called before zoom, return false to prevent zoom
-            return true;
-          },
-          afterZoom: () => function(start, end) {                   // called after zoom
-          }
-        }
-      }
-    }
-  }
+          beforeZoom: () =>
+            function (start, end) {
+              // called before zoom, return false to prevent zoom
+              return true;
+            },
+          afterZoom: () =>
+            function (start, end) {
+              // called after zoom
+            },
+        },
+      },
+    },
+  },
 });
 ```
 
